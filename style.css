@@ -9,7 +9,7 @@
 
 :root {
     --dmag: hsl(300, 43%, 22%);
-    --spink: hsl(333, 80%, 67%);
+    --spink: hsl(333, 60%, 67%);
     --gmag: hsl(303, 10%, 53%);
     --lmag: hsl(300, 24%, 96%);
     --white: hsl(0, 0%, 100%);
@@ -17,23 +17,20 @@
 
 body {
     font-family: 'Spartan', sans-serif;
-    font-size: 15px;
+    font-size: 13px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-/* ########################################### */
-div {
-    border: 1px dashed pink;
-}
-/* ########################################### */
+
+/* div, section {
+    border: 1px dashed teal;
+} */
 
 main {
     display: flex;
     flex-direction: column;
     justify-content: center;
-
-    border: solid 1px greenyellow
 }
 
 section {
@@ -44,9 +41,19 @@ section {
 }
 .copy {
     flex: 1;
+    color: var(--dmag);
 }
 
+h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
 
+.copy__text {
+    color: var(--gmag);
+    line-height: 1.5rem;
+}
 
 .stars {
     flex: 1;
@@ -56,14 +63,19 @@ section {
     justify-content: space-around;
 }
 .stars__rated {
-    padding: .4rem;
+    padding: .6rem 2rem .6rem 2rem;
     display:  flex;
     justify-content: center;
     align-items: center;
+
+    border-radius: 5px;
+    background-color: var(--lmag);
+    color: var(--dmag);
+    font-weight: 700;
 }
 
 .stars__rated span {
-    margin: 0 1rem 0 1rem;
+    margin-right: 1rem;
 }
 
 .star {
@@ -72,7 +84,14 @@ section {
 
 
 /* ####????????????????????##### */
+.user {
+    padding: 1.8rem;
+    background: var(--dmag);
+    border-radius: 8px;
+    color: var(--lmag);
+    font-size: 11px;
 
+}
 
 .user__top {
     display: flex;
@@ -83,6 +102,25 @@ section {
 .user__image {
     width: 35px;
     border-radius: 50%;
+}
+
+.user__top__name {
+    margin-left: 1rem;
+    color: var(--gmag);
+}
+
+.user__top__name b {
+    color: var(--white);
+}
+
+.user__top__name p {
+    font-weight: 500;
+    margin-top: .3rem;
+}
+
+.user__text {
+    margin-top: 1.5rem;
+    line-height: 1.2rem;
 }
 
 @media (max-width: 699px) {
@@ -96,10 +134,20 @@ section {
         flex-direction: column;
     }
     .stars {
-        align-items: center;
+        align-items: stretch;
+        margin: 1rem 0 1rem 0;
     }
     .stars__rated {
         flex-direction: column;
+        margin: .3rem 0 .3rem 0;
+    }
+
+    .user {
+        margin: .7rem 0 .7rem 0;
+    }
+
+    .copy {
+        text-align: center;
     }
 }
 
@@ -110,6 +158,7 @@ section {
     main {
         margin: 5rem;
         min-height: 500px;
+        max-width: 1200px;
     }
     section {
         display: flex;
